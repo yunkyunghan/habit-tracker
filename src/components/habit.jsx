@@ -16,8 +16,8 @@ class Habit extends Component {
     };
 
     render() {
-        console.log("@@@@:", this.props.habit)
-        const { name, count } = this.props.habit;
+        console.log("@@@@:", this.props)
+        const { name, count } = this.props.habitt;
 
         return (
             <li className="habit">

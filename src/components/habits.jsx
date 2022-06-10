@@ -4,9 +4,9 @@ import Habit from './habit';
 class Habits extends Component {
     state = {
         habits: [
-            {name: 'Coding', count: 0},
-            {name: 'Coffee', count: 0},
-            {name: 'Reading', count: 0}
+            {id: 1, name: 'Coding', count: 0},
+            {id: 2, name: 'Drinking Coffee', count: 0},
+            {id: 3, name: 'Working out', count: 0}
         ]
     };
 
@@ -14,8 +14,8 @@ class Habits extends Component {
         return (
             <ul>
                 {
-                    this.state.habits.map(habit => (
-                        <Habit habit={habit}/>
+                    this.state.habits.map(myHabit => (
+                        <Habit key={myHabit.id} habitt={myHabit}/>
                     ))
                 }
             
