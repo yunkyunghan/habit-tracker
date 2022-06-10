@@ -10,15 +10,32 @@ class Habits extends Component {
         ]
     };
 
+    handleIncrement = (habit) => {
+        console.log(`handleIncrement ${habit.name}`)
+    };
+
+    handleDecrement = (habit) => {
+        console.log(`handleDecrement ${habit.name}`)
+    };
+
+    handleDelete = (habit) => {
+        console.log(`handleDelete ${habit.name}`)
+    };
+
     render() {
         return (
             <ul>
                 {
                     this.state.habits.map(myHabit => (
-                        <Habit key={myHabit.id} habitt={myHabit}/>
+                        <Habit 
+                            key={myHabit.id} 
+                            habitt={myHabit} 
+                            onIncrement={this.handleIncrement} 
+                            onDecrement={this.handleDecrement} 
+                            onDelete={this.handleDelete} 
+                        />
                     ))
                 }
-            
             </ul>
         )
     }
