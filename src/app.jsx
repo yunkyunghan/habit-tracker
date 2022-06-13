@@ -31,7 +31,11 @@ handleDecrement = (habit) => {
 
 handleDelete = (habit) => {
   const _habits = this.state.habits.filter(item => item.id !== habit.id);
+  this.setState( { habits: _habits } );
+};
 
+handleAdd =(name) => {
+  const _habits = [...this.state.habits, { id:Date.now(), name: name, count:0 }]
   this.setState( { habits: _habits } );
 };
 
@@ -41,12 +45,12 @@ handleDelete = (habit) => {
         <Navbar 
           totalCount={this.state.habits.filter(item => item.count > 0).length}
         />
-
         <Habits 
         habits = {this.state.habits} 
         onIncrement={this.handleIncrement} 
         onDecrement={this.handleDecrement} 
         onDelete={this.handleDelete}  
+        onAdd={this.handleAdd} 
       />
       </>
     );

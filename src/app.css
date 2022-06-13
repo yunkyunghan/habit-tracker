@@ -33,6 +33,27 @@ button {
   border-radius: 50%;
 }
 
+/* .add-form {
+  font-size: 2rem;
+  margin-right: 0.2em;
+} */
+
+.add-input {
+  font-size: 2rem;
+  margin-right: 0.2em;
+  margin-top: 0.2em;
+  margin-left: 0.2em;
+  padding: 0.2em 0.4em;
+}
+
+.add-button {
+  height: 100%;
+  font-size: 1.5rem;
+  padding: 0.4em 0.6em;
+  background-color: goldenrod;
+  color: white;
+}
+
 .habit {
   font-size: 2.5rem;
   padding: 0.5em;
