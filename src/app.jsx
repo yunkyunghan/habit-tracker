@@ -48,8 +48,9 @@ handleReset =() => {
 }
 
   render() {
+    console.log("app")
     return (
-      <>
+      <div>
         <Navbar 
           totalCount={this.state.habits.filter(item => item.count > 0).length}
         />
@@ -61,7 +62,7 @@ handleReset =() => {
         onAdd={this.handleAdd}
         onReset={this.handleReset} 
       />
-      </>
+      </div>
     );
   }
 }
