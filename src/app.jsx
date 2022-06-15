@@ -13,19 +13,23 @@ class App extends Component {
 };
 
 handleIncrement = (habit) => {
-  const _habits = [...this.state.habits];
-  const index = _habits.indexOf(habit);
-
-  _habits[index].count++;
+  const _habits = this.state.habits.map(item => {
+    if (item.id === habit.id) {
+        return {...habit, count: habit.count + 1}
+    } 
+    return item;
+  })
   this.setState( { habits: _habits } ); // key, value 값이 같으면 key값만 써줘도 무방.
 };
 
 handleDecrement = (habit) => {
-  const _habits = [...this.state.habits];
-  const index = _habits.indexOf(habit);
-  const count = _habits[index].count - 1;
-
-  _habits[index].count = count < 0 ? 0 : count;   
+  const _habits = this.state.habits.map(item => {
+    if (item.id === habit.id) {
+      const count = habit.count - 1;
+      return {...habit, count: count < 0 ? 0 : count}
+    }
+    return item;
+  })
   this.setState( { habits: _habits } );
 };
 
@@ -41,8 +45,10 @@ handleAdd =(name) => {
 
 handleReset =() => {
   const _habits = this.state.habits.map(myHabit => {
-    myHabit.count = 0;
-    return myHabit;
+      if (myHabit.count !== 0) {
+        return {...myHabit, count:0}
+      }
+      return myHabit;
   });
   this.setState( { habits: _habits } );
 }
